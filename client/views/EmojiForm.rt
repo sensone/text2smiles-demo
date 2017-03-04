@@ -1,0 +1,12 @@
+<rt-import name="default" as="Jumbotron" from="../components/Jumbotron" />
+<rt-import name="default" as="Form" from="../components/Form" />
+
+<section>
+  <Jumbotron text={this.state.text} textLength={this.state.textLength} fontSize={this.state.fontSize}
+             textEmoji={this.state.textEmoji} bgEmoji={this.state.bgEmoji}
+             onChangeParams={this.handleChangeParams.bind(this)} />
+
+  <Form text={this.state.text} textLength={this.state.textLength} fontSize={this.state.fontSize}
+        textEmoji={this.state.textEmoji} bgEmoji={this.state.bgEmoji}
+        onChangeParams={this.handleChangeParams.bind(this)} />
+</section>

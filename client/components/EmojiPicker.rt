@@ -1,0 +1,43 @@
+<rt-import name="default" as="Nav" from="react-bootstrap/lib/Nav" />
+<rt-import name="default" as="NavItem" from="react-bootstrap/lib/NavItem" />
+<rt-import name="default" as="NavDropdown" from="react-bootstrap/lib/NavDropdown" />
+<rt-import name="default" as="MenuItem" from="react-bootstrap/lib/MenuItem" />
+<rt-import name="default" as="ButtonToolbar" from="react-bootstrap/lib/ButtonToolbar" />
+<rt-import name="default" as="ButtonGroup" from="react-bootstrap/lib/ButtonGroup" />
+<rt-import name="default" as="Button" from="react-bootstrap/lib/Button" />
+<rt-import name="default" as="unicodeToStringEmoji" from="../utils/common" />
+
+<div>
+  <div rt-if="this.state.show">
+    <Nav bsStyle="tabs" activeKey={this.state.selectedCategory} onSelect={this.handleSelect.bind(this)}>
+      <NavItem rt-repeat="category, index in this.state.categories" eventKey={category} key={index}>{category.caption}</NavItem>
+    </Nav>
+    <section>
+      <ButtonToolbar className="emoji-list__skin-selector" rt-if="this.state.selectedCategory.name === 'Skin Tones'">
+        <ButtonGroup>
+          <Button rt-repeat="tone, index in this.state.skinTones" key={index}
+                  className="{this.state.selectedTone.value === tone.value ? 'emoji-list__skin-active' : ''} "
+                  onClick={this.handleSelectSkin.bind(this,tone)}>
+            <div class="emoji-list__skin" style="backgroundColor:{tone.color}"></div>
+          </Button>
+        </ButtonGroup>
+      </ButtonToolbar>
+
+      <div className="emoji-list__list">
+        <Button rt-repeat="emoji, index in this.getFilteredEmojis()"
+                key={index}
+                className="{this.props.selected.unified === emoji.unified ? 'emoji-list__emoji active' : 'emoji-list__emoji'}"
+                onClick={this.handleSelectEmoji.bind(this,emoji)}>
+          {unicodeToStringEmoji(emoji)}
+        </Button>
+      </div>
+    </section>
+  </div>
+
+  <Button className="{this.state.show ? 'pull-right' : ''}"
+          onClick={this.toggleShow.bind(this)}>
+    <span>{this.state.show ? 'Hide' : 'Selected:'}
+      <span rt-if="!this.state.show">{unicodeToStringEmoji(this.props.selected)}</span>
+    </span>
+  </Button>
+</div>

@@ -1,0 +1,62 @@
+<rt-import name="default" as="Button" from="react-bootstrap/lib/Button" />
+<rt-import name="default" as="Form" from="react-bootstrap/lib/Form" />
+<rt-import name="default" as="Col" from="react-bootstrap/lib/Col" />
+<rt-import name="default" as="FormControl" from="react-bootstrap/lib/FormControl" />
+<rt-import name="default" as="FormGroup" from="react-bootstrap/lib/FormGroup" />
+<rt-import name="default" as="ControlLabel" from="react-bootstrap/lib/ControlLabel" />
+<rt-import name="default" as="EmojiPicker" from="../components/EmojiPicker" />
+<rt-import name="default" as="Counter" from="../components/Counter" />
+
+<div className="container">
+  <Form horizontal>
+    <FormGroup controlId="formtext">
+      <Col componentClass={ControlLabel} sm={1}>
+        Text
+      </Col>
+      <Col sm={11}>
+        <FormControl type="text" placeholder="Text" value={this.props.text} onChange="{this.handleChangeText.bind(this)}"/>
+      </Col>
+    </FormGroup>
+
+    <FormGroup>
+      <Col componentClass={ControlLabel} sm={1}></Col>
+      <Col sm={2}>
+        <ControlLabel className="pull-right">Symbols in the string: {this.props.textLength}</ControlLabel>
+      </Col>
+      <Col sm={2}>
+        <Counter value={this.props.textLength} minValue={1}
+          onChange="{this.handleChangeTextLength.bind(this)}" />
+      </Col>
+      <Col componentClass={ControlLabel} sm={1}></Col>
+      <Col sm={2}>
+        <ControlLabel className="pull-right">Font size: {this.props.fontSize}</ControlLabel>
+      </Col>
+      <Col sm={2}>
+        <Counter value={this.props.fontSize} minValue={4}
+          onChange="{this.handleChangeFontSize.bind(this)}" />
+      </Col>
+    </FormGroup>
+
+    <FormGroup>
+      <Col componentClass={ControlLabel} sm={1}>
+        Background Emoji
+      </Col>
+      <Col sm={11}>
+        <EmojiPicker
+          selected={this.props.bgEmoji}
+          onChange={this.handleChangeBg.bind(this)} />
+      </Col>
+    </FormGroup>
+
+    <FormGroup controlId="formHorizontalPassword">
+      <Col componentClass={ControlLabel} sm={1}>
+        Text Emoji
+      </Col>
+      <Col sm={11}>
+        <EmojiPicker
+          selected={this.props.textEmoji}
+          onChange={this.handleChangeTextSmile.bind(this)} />
+      </Col>
+    </FormGroup>
+  </Form>
+</div>

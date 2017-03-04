@@ -1,0 +1,35 @@
+<rt-import name="default" as="Button" from="react-bootstrap/lib/Button" />
+<rt-import name="default" as="Nav" from="react-bootstrap/lib/Nav" />
+<rt-import name="default" as="Navbar" from="react-bootstrap/lib/Navbar" />
+<rt-import name="default" as="NavItem" from="react-bootstrap/lib/NavItem" />
+<rt-import name="default" as="MenuItem" from="react-bootstrap/lib/MenuItem" />
+<rt-import name="default" as="NavDropdown" from="react-bootstrap/lib/NavDropdown" />
+<rt-import name="default" as="GitHubForkRibbon" from="react-github-fork-ribbon" />
+<rt-import name="LinkContainer" from="react-router-bootstrap" />
+<rt-import name="Link" from="react-router" />
+
+
+<Navbar collapseOnSelect>
+  <GitHubForkRibbon href="https://github.com/sensone/text2smiles" target="_blank"
+    position="right" color="green">
+    Fork me on GitHub
+  </GitHubForkRibbon>
+  <Navbar.Header>
+    <Navbar.Brand>
+      <Link to="/">Break The System</Link>
+    </Navbar.Brand>
+  </Navbar.Header>
+  <Navbar.Collapse>
+    <Nav pullRight>
+      <LinkContainer to="/">
+        <NavItem>Home</NavItem>
+      </LinkContainer>
+      <LinkContainer to="about">
+        <NavItem>About</NavItem>
+      </LinkContainer>
+      <LinkContainer to="examples">
+        <NavItem>Examples</NavItem>
+      </LinkContainer>
+    </Nav>
+  </Navbar.Collapse>
+</Navbar>

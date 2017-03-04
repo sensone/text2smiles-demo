@@ -1,0 +1,12 @@
+<rt-import name="default" as="ButtonToolbar" from="react-bootstrap/lib/ButtonToolbar" />
+<rt-import name="default" as="Button" from="react-bootstrap/lib/Button" />
+
+
+<ButtonToolbar>
+  <Button className="counter__btn" bsStyle="warning" onClick={this.handleChangeTextLength.bind(this,1)}>
+    +
+  </Button>
+  <Button className="counter__btn" bsStyle="danger" onClick={this.handleChangeTextLength.bind(this,-1)}>
+    ―
+  </Button>
+</ButtonToolbar>

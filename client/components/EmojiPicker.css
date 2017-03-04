@@ -1,0 +1,30 @@
+.emoji-list__skin-selector {
+  margin: 10px 0;
+}
+
+.emoji-list__skin-selector .btn-group {
+  margin: 0px;
+}
+
+.emoji-list__skin-active {
+  background: orange !important;
+}
+
+.emoji-list__skin {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+}
+
+.emoji-list__emoji {
+  width: 46px;
+  height: 34px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 20px;
+  border-color: transparent !important;
+}
+
+.emoji-list__list {
+  margin: 10px 0;
+}

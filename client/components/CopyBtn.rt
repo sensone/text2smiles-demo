@@ -1,0 +1,9 @@
+<rt-import name="default" as="Button" from="react-bootstrap/lib/Button" />
+
+<Button className="center-block copyBtn__copy-btn"
+  rt-scope="this.state.copied as copied"
+  onClick={this.handleCopies.bind(this)}
+  bsStyle="{copied ? 'success' : 'info'}"
+  bsSize="large">
+  {copied ? 'Message copied' : 'Copy message'}
+</Button>

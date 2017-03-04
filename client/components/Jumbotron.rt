@@ -1,0 +1,26 @@
+<rt-import name="default" as="Jumbotron" from="react-bootstrap/lib/Jumbotron" />
+<rt-import name="default" as="Grid" from="react-bootstrap/lib/Grid" />
+<rt-import name="default" as="Row" from="react-bootstrap/lib/Row" />
+<rt-import name="default" as="Col" from="react-bootstrap/lib/Col" />
+
+<rt-import name="default" as="CopyBtn" from="../components/CopyBtn" />
+<rt-import name="default" as="ConvertedText" from="../components/ConvertedText" />
+
+<div id="jumbotron" rt-scope="this.convertText() as convertedText">
+  <Grid>
+    <Row>
+      <Col className="jumbotron__bg-message" style="fontSize:{this.props.fontSize}" xs={18} md={12}><ConvertedText text={convertedText} /></Col>
+      <Col xs={18} md={12} className="jumbotron__bg-message-bottom"></Col>
+    </Row>
+    <Row>
+      <Col className="jumbotron__description" xs={18} md={12}>
+        <h1 className="jumbotron__description">Awesome text converter for funny peoples, who likes playing and teasing his friends and colleagues</h1>
+      </Col>
+    </Row>
+    <Row>
+      <Col className="jumbotron__btn-container" xs={18} md={12}>
+        <CopyBtn text={convertedText} />
+      </Col>
+    </Row>
+  </Grid>
+</div>

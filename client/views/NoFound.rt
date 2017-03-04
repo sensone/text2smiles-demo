@@ -1,0 +1,28 @@
+<rt-import name="default" as="Grid" from="react-bootstrap/lib/Grid" />
+<rt-import name="default" as="Row" from="react-bootstrap/lib/Row" />
+<rt-import name="default" as="Col" from="react-bootstrap/lib/Col" />
+<rt-import name="Link" from="react-router" />
+
+
+<rt-import name="default" as="ConvertedText" from="../components/ConvertedText" />
+<rt-import name="default" as="convertText2Smiles" from="text2smiles" />
+
+<Grid rt-scope="this.state as state">
+  <Row>
+    <Col xs={18} md={12} style="font-size: 20px;">
+      <ConvertedText text={convertText2Smiles(state.error,state.bg,state.bfTextError,state.textLength)} />
+      <ConvertedText text={convertText2Smiles(state.description,state.bg,state.bgTextDescription,state.textLength)} />
+    </Col>
+  </Row>
+  <Row>
+    <Col xs={18} md={12} class="page-not-found__text">
+      <p>Sorry, somethink was wrong</p>
+      <p>No match for URL: <span style="color: red;">/{this.props.params.splat}</span></p>
+    </Col>
+  </Row>
+  <Row>
+    <Col xs={18} md={12} style="text-align: center;">
+      <p>Try go to the <Link to="/">Main page</Link></p>
+    </Col>
+  </Row>
+</Grid>
