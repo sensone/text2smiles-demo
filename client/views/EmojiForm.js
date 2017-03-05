@@ -55,7 +55,7 @@ export default class EmojiForm extends React.PureComponent {
   constructor(props) {
     super(props);
 
-    const DEFAULT_TEXT = this.props.params.UserText || 'break the system'; // eslint-disable-line react/prop-types
+    const DEFAULT_TEXT = this.props.params.UserText || 'break the  system '; // eslint-disable-line react/prop-types
     // const BG_EMOJI = this.props.params.UserBg || '🍧';
     // const TEXT_BG_EMOJI = this.props.params.UserTextBg || '🕋';
 
