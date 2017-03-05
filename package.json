@@ -6,11 +6,6 @@
     "commit": "git-cz",
     "semantic-release": "semantic-release pre && npm publish && semantic-release post"
   },
-  "graphql": {
-    "request": {
-      "url": ""
-    }
-  },
   "dependencies": {
     "clipboard-js": "^0.3.3",
     "emojis-list": "^2.1.0",
